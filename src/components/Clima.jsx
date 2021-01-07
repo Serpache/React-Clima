@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types'
 
 const Clima = ( {resultado} ) => {
 
@@ -8,7 +9,7 @@ const Clima = ( {resultado} ) => {
     //Evitar que el componente carge sin datos
     if(!name) return null;
 
-    //Grados kilvin a centigrados
+    //Grados kelvin a centigrados
     const kelvin = 273.15;
 
     return ( 
@@ -27,6 +28,10 @@ const Clima = ( {resultado} ) => {
             </div>
         </div>
      );
+}
+
+Clima.propTypes = {
+    resultado: PropTypes.object.isRequired
 }
  
 export default Clima;

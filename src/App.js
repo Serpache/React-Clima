@@ -21,8 +21,8 @@ function App() {
 
   useEffect(() => {
     const consultarAPI = async () => {
-
-      const appId = "0c3717e6cedf58b4a4341f4d2c0f0021";
+      //Añadir aquí key de acceso en cuenta de openweathermap
+      const appId = "code";
       const url = `http://api.openweathermap.org/data/2.5/weather?q=${ciudad},${pais}&appid=${appId}`
 
       const respuesta = await fetch(url);
@@ -38,6 +38,8 @@ function App() {
       }
     }
     consultarAPI();
+    // El comentario siguiente elimina warning de dependencias en el array [consultar]
+    // eslint-disable-next-line
   }, [consultar]);
 
   let componente;
